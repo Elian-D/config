@@ -14,19 +14,19 @@ Utiliza uno de los siguientes prefijos para el `<tipo>`:
 | **`docs`** | Cambios en la **documentación** (README, comentarios, etc.). | `docs: actualizar README` | No Impacta |
 | **`style`** | Cambios de **formato o estilo** de código (indentación, punto y coma). | `style: mejorar indentación` | No Impacta |
 | **`chore`** | Tareas de **mantenimiento** (configuración, dependencias no críticas). | `chore: agregar .gitignore` | No Impacta |
-| **`build`** | Cambios relacionados con el **sistema de construcción** (npm, webpack, etc.). | `build: actualizar version de webpack` | No Impacta |
+| **`build`** | Cambios relacionados con el **sistema de construcción** (npm, webpack, etc.). | `build: actualizar versión de webpack` | No Impacta |
 | **`ci`** | Cambios en la configuración de **Integración Continua** (GitHub Actions, GitLab CI, etc.). | `ci: agregar paso de linting` | No Impacta |
-| **`revert`** | **Revertir** por completo un commit anterior. | `revert: "feat: agregar módulo de pagos"` | PATCH (Generalmente) |
+| **`revert`** | **Revertir** por completo un commit anterior. | `revert: "feat: agregar módulo de pagos"` | PATCH (generalmente) |
 
 ---
 
 ## 🚨 Manejo de Cambios Mayores (`BREAKING CHANGE`)
 
-Si un commit introduce un cambio que **rompe la compatibilidad** y requiere que los usuarios actualicen su código (Ej: cambiar el nombre de una función o endpoint), debe ser claramente indicado.
+Si un commit introduce un cambio que **rompe la compatibilidad** y requiere que los usuarios actualicen su código (por ejemplo, cambiar el nombre de una función o endpoint), debe ser indicado claramente.
 
-Para esto, se debe agregar el texto **`BREAKING CHANGE:`** en el pie de página (footer) del mensaje de commit.
+Para esto, se debe agregar el texto **`BREAKING CHANGE:`** en el pie de página (*footer*) del mensaje de commit.
 
-```markdown
-**Sintaxis en el Pie de Página:**
+### Sintaxis en el pie de página:
 
+```txt
 BREAKING CHANGE: <Descripción de la ruptura de compatibilidad>

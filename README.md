@@ -1,32 +1,78 @@
----
-
-## 🎯 Tipos de Commit (Commit Types)
-
-Utiliza uno de los siguientes prefijos para el `<tipo>`:
-
-| Prefijo | Propósito | Ejemplo de Commit | Impacto en SemVer |
-| :--- | :--- | :--- | :--- |
-| **`feat`** | **Nueva funcionalidad** o característica. | `feat: agregar formulario de contacto` | MINOR |
-| **`fix`** | **Corrección de errores** en el código de producción. | `fix: corregir bug en login` | PATCH |
-| **`perf`** | **Mejoras de rendimiento** del código. | `perf: optimizar carga de imágenes` | PATCH |
-| **`refactor`** | **Reestructuración** de código sin cambiar su comportamiento. | `refactor: simplificar función de búsqueda` | PATCH |
-| **`test`** | Añadir o modificar **pruebas** (unitarias, integración, etc.). | `test: agregar test para registro` | PATCH |
-| **`docs`** | Cambios en la **documentación** (README, comentarios, etc.). | `docs: actualizar README` | No Impacta |
-| **`style`** | Cambios de **formato o estilo** de código (indentación, punto y coma). | `style: mejorar indentación` | No Impacta |
-| **`chore`** | Tareas de **mantenimiento** (configuración, dependencias no críticas). | `chore: agregar .gitignore` | No Impacta |
-| **`build`** | Cambios relacionados con el **sistema de construcción** (npm, webpack, etc.). | `build: actualizar versión de webpack` | No Impacta |
-| **`ci`** | Cambios en la configuración de **Integración Continua** (GitHub Actions, GitLab CI, etc.). | `ci: agregar paso de linting` | No Impacta |
-| **`revert`** | **Revertir** por completo un commit anterior. | `revert: "feat: agregar módulo de pagos"` | PATCH (generalmente) |
+# Guía de Git y GitHub
 
 ---
 
-## 🚨 Manejo de Cambios Mayores (`BREAKING CHANGE`)
+## 1. Instalación
 
-Si un commit introduce un cambio que **rompe la compatibilidad** y requiere que los usuarios actualicen su código (por ejemplo, cambiar el nombre de una función o endpoint), debe ser indicado claramente.
+- **Git:**  
+  Descarga e instala Git desde [https://git-scm.com/downloads](https://git-scm.com/downloads) según tu sistema operativo.
 
-Para esto, se debe agregar el texto **`BREAKING CHANGE:`** en el pie de página (*footer*) del mensaje de commit.
+- **GitHub:**  
+  Crea una cuenta en [https://github.com/](https://github.com/) para alojar tus repositorios.
 
-### Sintaxis en el pie de página:
+---
 
-```txt
-BREAKING CHANGE: <Descripción de la ruptura de compatibilidad>
+## 2. Comandos básicos
+
+```bash
+# Clonar un repositorio
+git clone https://github.com/usuario/repositorio.git
+
+# Ver estado de archivos
+git status
+
+# Agregar cambios para preparar commit
+git add archivo.txt
+git add .
+
+# Confirmar cambios
+git commit -m "Mensaje descriptivo"
+
+# Subir cambios al repositorio remoto
+git push origin main
+
+# Crear una nueva rama
+git checkout -b nombre-rama
+
+# Cambiar a otra rama existente
+git checkout nombre-rama
+
+# Actualizar repositorio local
+git pull origin main
+```
+## 3. Buenas prácticas
+- Trabaja en ramas separadas para nuevas funcionalidades o correcciones.
+- Realiza commits claros y descriptivos.
+- Sincroniza frecuentemente con el repositorio remoto para evitar conflictos.
+
+## 4. Tipos de Commits (Conventional Commits)
+
+Usar un **formato estándar** para los mensajes de commit ayuda a mantener un historial claro, facilitar la colaboración y automatizar tareas como generación de changelogs o despliegues.
+
+Los prefijos más comunes son:
+
+```bash
+# Nueva funcionalidad
+feat: agregar formulario de contacto
+
+# Corrección de errores
+fix: corregir bug en login
+
+# Mantenimiento o tareas internas (configuración, dependencias, etc.)
+chore: agregar .gitignore
+
+# Cambios en la documentación
+docs: actualizar README
+
+# Cambios de formato o estilo de código sin afectar funcionalidad
+style: mejorar indentación
+
+# Reestructuración del código sin cambiar su comportamiento
+refactor: simplificar función de búsqueda
+
+# Añadir o modificar pruebas
+test: agregar test para registro
+
+# Mejoras de rendimiento
+perf: optimizar carga de imágenes
+```
